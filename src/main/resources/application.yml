@@ -1,1 +1,18 @@
-spring.application.name=orderservice
+spring:
+  config:
+    import: "optional:orderservice:"
+  application:
+    name: orderservice
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: dev
+      label: master
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/your_database_name
+      username: test
+      password: test
+      database: your_database_name
+
